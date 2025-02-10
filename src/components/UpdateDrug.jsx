@@ -22,7 +22,7 @@ const UpdateDrug = () => {
       return;
     }
     axios
-      .get(`http://localhost:5559/api/drugs/${id}`, {
+      .get(`https://finalproject-backend-zagu.onrender.com/api/drugs/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -55,11 +55,15 @@ const UpdateDrug = () => {
       price: formData.price,
     };
     axios
-      .put(`http://localhost:5559/api/drugs/${id}`, updatedDrug, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
+      .put(
+        `https://finalproject-backend-zagu.onrender.com/api/drugs/${id}`,
+        updatedDrug,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      )
       .then((res) => {
         alert("Drug updated successffully.");
         navigate("/drugs");

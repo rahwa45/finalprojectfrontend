@@ -26,10 +26,13 @@ const Login = () => {
 
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5559/api/auth/login", {
-        username,
-        password,
-      });
+      const res = await axios.post(
+        "https://finalproject-backend-zagu.onrender.com/api/auth/login",
+        {
+          username,
+          password,
+        }
+      );
 
       const { token, username: resUsername, role } = res.data;
       localStorage.setItem("token", token);

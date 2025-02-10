@@ -33,7 +33,7 @@ const AddPrescription = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5559/api/prescriptions",
+        "https://finalproject-backend-zagu.onrender.com/api/prescriptions",
         { patientName, drugDetails, status },
         { headers: { Authorization: `Bearer ${token}` } }
       );

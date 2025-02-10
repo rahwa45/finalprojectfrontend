@@ -12,7 +12,7 @@ const UpdatePrescriptionForm = () => {
     const fetchPrescriptions = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:5559/api/prescriptions"
+          "https://finalproject-backend-zagu.onrender.com/api/prescriptions"
         ); // API endpoint to fetch prescriptions
         setPrescriptions(response.data);
       } catch (err) {
@@ -31,7 +31,7 @@ const UpdatePrescriptionForm = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5559/api/prescriptions/${selectedPrescription._id}`,
+        `https://finalproject-backend-zagu.onrender.com/api/prescriptions/${selectedPrescription._id}`,
         { status }
       );
       setPrescriptions((prevPrescriptions) =>

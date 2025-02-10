@@ -24,7 +24,7 @@ const DeleteDrug = () => {
     }
 
     setLoading(true);
-    const url = `http://localhost:5559/api/drugs/${id}`;
+    const url = `https://finalproject-backend-zagu.onrender.com/api/drugs/${id}`;
     console.log(url);
     axios
       .delete(url, {

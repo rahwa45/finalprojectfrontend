@@ -11,9 +11,12 @@ const DrugTable = () => {
   useEffect(() => {
     const fetchDrugs = async () => {
       try {
-        const response = await axios.get("http://localhost:5559/api/drugs", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const response = await axios.get(
+          "https://finalproject-backend-zagu.onrender.com/api/drugs",
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         setDrugs(response.data);
       } catch (error) {
         console.error(

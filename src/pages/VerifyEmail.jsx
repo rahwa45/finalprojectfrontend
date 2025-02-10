@@ -17,7 +17,9 @@ const VerifyEmail = () => {
     const verifyEmail = async () => {
       try {
         // Send the token to the backend for verification
-        await axios.get(`http://localhost:5559/api/auth/verify?token=${token}`);
+        await axios.get(
+          `https://finalproject-backend-zagu.onrender.com/api/auth/verify?token=${token}`
+        );
         enqueueSnackbar("Email verified successfully!", { variant: "success" });
         navigate("/login");
       } catch (error) {

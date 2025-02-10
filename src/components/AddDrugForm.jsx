@@ -26,7 +26,7 @@ const AddDrugForm = () => {
       price,
     };
     axios
-      .post("http://localhost:5559/api/drugs", data, {
+      .post("https://finalproject-backend-zagu.onrender.com/api/drugs", data, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
