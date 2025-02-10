@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
-import SignUp from "./pages/Signup";
+
+import SignUp from "./pages/SignUp ";
+
 import VerifyEmail from "./pages/VerifyEmail";
 import "./components/App.css";
 import CashierStatus from "./components/CashierStatus";
