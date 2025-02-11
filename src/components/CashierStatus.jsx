@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-import BackButton from "./BackButton";
+import Back from "./Back";
 import Footer from "./Footer";
 
 const PrescriptionTable = () => {
@@ -63,7 +63,7 @@ const PrescriptionTable = () => {
 
   return (
     <div className="p-5">
-      <BackButton />
+      <Back />
       <h2>Prescription</h2>
       <table className="table table-bordered table-hover shadow-50 w-75">
         <thead className="table-danger">
