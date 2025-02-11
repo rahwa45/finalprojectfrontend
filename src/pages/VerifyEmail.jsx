@@ -57,7 +57,12 @@ const VerifyEmail = () => {
           ) : (
             <>
               <p>Click the button below to verify your email:</p>
-              <button onClick={verifyEmail}>Verify Email</button>
+              <button
+                onClick={verifyEmail}
+                style={{ backgroundColor: "green", color: "white" }}
+              >
+                Verify Email
+              </button>
             </>
           )}
         </>
