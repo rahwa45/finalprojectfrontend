@@ -47,7 +47,7 @@ const VerifyEmail = () => {
   }, [token]);
 
   return (
-    <div>
+    <div className="d-flex align-items-center justify-content-center vh-100 bg-light">
       <h1>Email Verification</h1>
 
       {!verified ? (
@@ -57,10 +57,7 @@ const VerifyEmail = () => {
           ) : (
             <>
               <p>Click the button below to verify your email:</p>
-              <button
-                onClick={verifyEmail}
-                style={{ backgroundColor: "green", color: "white" }}
-              >
+              <button onClick={verifyEmail} className="btn btn-success btn-lg">
                 Verify Email
               </button>
             </>
