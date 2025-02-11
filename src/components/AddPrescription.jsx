@@ -3,7 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BackButton from "./BackButton";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
+
 const AddPrescription = () => {
   const [patientName, setPatientName] = useState("");
   const [drugDetails, setDrugDetails] = useState([
@@ -33,7 +33,7 @@ const AddPrescription = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://finalproject-backend-eta.vercel.app/api/prescriptions",
+        "https://finalproject-backend-zagu.onrender.com/api/prescriptions",
         { patientName, drugDetails, status },
         { headers: { Authorization: `Bearer ${token}` } }
       );

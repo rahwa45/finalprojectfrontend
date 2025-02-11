@@ -26,7 +26,7 @@ const AddDrugForm = () => {
       price,
     };
     axios
-      .post("https://finalproject-backend-eta.vercel.app/api/drugs", data, {
+      .post("https://finalproject-backend-zagu.onrender.com/api/drugs", data, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,

@@ -19,7 +19,7 @@ const PrescriptionTable = () => {
     const fetchPrescriptions = async () => {
       try {
         const response = await axios.get(
-          "https://finalproject-backend-eta.vercel.app/api/prescriptions",
+          "https://finalproject-backend-zagu.onrender.com/api/prescriptions",
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -39,7 +39,7 @@ const PrescriptionTable = () => {
   const updateStatus = async (prescriptionId, newStatus) => {
     try {
       const response = await axios.put(
-        `https://finalproject-backend-eta.vercel.app/api/prescriptions/${prescriptionId}`,
+        `https://finalproject-backend-zagu.onrender.com/api/prescriptions/${prescriptionId}`,
         { status: newStatus },
         {
           headers: { Authorization: `Bearer ${token}` },

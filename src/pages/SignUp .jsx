@@ -25,7 +25,7 @@ const SignUp = () => {
       return;
     }
     axios
-      .post("https://finalproject-backend-eta.vercel.app/api/auth/signup", {
+      .post("https://finalproject-backend-zagu.onrender.com/api/auth/signup", {
         username,
         role,
         email,

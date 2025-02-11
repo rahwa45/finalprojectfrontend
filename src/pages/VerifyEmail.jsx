@@ -18,7 +18,7 @@ const VerifyEmail = () => {
       try {
         // Send the token to the backend for verification
         const response = await axios.get(
-          `https://finalproject-backend-eta.vercel.app/api/auth/verify?token=${token}`
+          `https://finalproject-backend-zagu.onrender.com/api/auth/verify?token=${token}`
         );
         if (response.status === 200) {
           enqueueSnackbar(response.data.message, { variant: "success" });
