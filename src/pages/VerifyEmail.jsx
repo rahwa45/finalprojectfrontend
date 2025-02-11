@@ -63,7 +63,12 @@ const VerifyEmail = () => {
               ) : (
                 <>
                   <p>Click the button below to verify your email:</p>
-                  <button onClick={verifyEmail}>Verify Email</button>
+                  <button
+                    onClick={verifyEmail}
+                    className="btn btn-success btn-lg"
+                  >
+                    Verify Email
+                  </button>
                 </>
               )}
             </>
