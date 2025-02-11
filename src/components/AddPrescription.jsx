@@ -33,7 +33,7 @@ const AddPrescription = () => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "https://finalproject-backend-zagu.onrender.com/api/prescriptions",
+        "https://finalproject-backend-eta.vercel.app/api/prescriptions",
         { patientName, drugDetails, status },
         { headers: { Authorization: `Bearer ${token}` } }
       );

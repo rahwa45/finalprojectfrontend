@@ -22,7 +22,7 @@ const UpdateDrug = () => {
       return;
     }
     axios
-      .get(`https://finalproject-backend-zagu.onrender.com/api/drugs/${id}`, {
+      .get(`https://finalproject-backend-eta.vercel.app/api/drugs/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -56,7 +56,7 @@ const UpdateDrug = () => {
     };
     axios
       .put(
-        `https://finalproject-backend-zagu.onrender.com/api/drugs/${id}`,
+        `https://finalproject-backend-eta.vercel.app/api/drugs/${id}`,
         updatedDrug,
         {
           headers: {

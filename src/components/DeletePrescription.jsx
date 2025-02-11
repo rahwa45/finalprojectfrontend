@@ -18,7 +18,7 @@ const DeletePrescription = () => {
     // Confirmation dialog
 
     // Send DELETE request to the backend
-    const url = `https://finalproject-backend-zagu.onrender.com/api/prescriptions/${id}`;
+    const url = `https://finalproject-backend-eta.vercel.app/api/prescriptions/${id}`;
     console.log(url);
     axios
       .delete(url, {

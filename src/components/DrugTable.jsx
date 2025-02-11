@@ -12,7 +12,7 @@ const DrugTable = () => {
     const fetchDrugs = async () => {
       try {
         const response = await axios.get(
-          "https://finalproject-backend-zagu.onrender.com/api/drugs",
+          "https://finalproject-backend-eta.vercel.app/api/drugs",
           {
             headers: { Authorization: `Bearer ${token}` },
           }

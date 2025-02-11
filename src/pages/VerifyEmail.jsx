@@ -17,11 +17,17 @@ const VerifyEmail = () => {
     const verifyEmail = async () => {
       try {
         // Send the token to the backend for verification
-        await axios.get(
-          `https://finalproject-backend-zagu.onrender.com/api/auth/verify?token=${token}`
+        const response = await axios.get(
+          `https://finalproject-backend-eta.vercel.app/api/auth/verify?token=${token}`
         );
-        enqueueSnackbar("Email verified successfully!", { variant: "success" });
-        navigate("/login");
+        if (response.status === 200) {
+          enqueueSnackbar(response.data.message, { variant: "success" });
+          navigate("/login");
+        } else {
+          enqueueSnackbar("Verification failed. Please try again.", {
+            variant: "error",
+          });
+        }
       } catch (error) {
         enqueueSnackbar("Invalid or expired token", { variant: "error" });
         console.error("Verification error:", error);
