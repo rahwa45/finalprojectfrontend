@@ -7,8 +7,6 @@ const UpdatePrescriptionForm = () => {
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
 
-  const userRole = localStorage.getItem("role");
-
   // Fetch prescriptions
   useEffect(() => {
     const fetchPrescriptions = async () => {
@@ -29,14 +27,6 @@ const UpdatePrescriptionForm = () => {
     if (!status) {
       setError("Please select a valid status.");
       return;
-    }
-
-    if (
-      selectedPrescription.status === "Pending" &&
-      status === "Paid" &&
-      userRole !== "Cashier"
-    ) {
-      setError("only cashiers can mark a prescription as paid.");
     }
 
     try {
@@ -92,8 +82,9 @@ const UpdatePrescriptionForm = () => {
             <label>Status: </label>
             <select value={status} onChange={(e) => setStatus(e.target.value)}>
               <option value="">Select status</option>
-              {selectedPrescription.status === "Pending" &&
-                userRole === "Cashire" && <option value="Paid">Paid</option>}
+              {selectedPrescription.status === "Pending" && (
+                <option value="Pending">Pending</option>
+              )}
               {selectedPrescription.status === "Paid" && (
                 <option value="Dispensed">Dispensed</option>
               )}
