@@ -137,6 +137,7 @@ const PrescriptionTable = () => {
       >
         Add Prescription
       </Link>
+
       <div className="foot2 d-flex align-items-end">
         <Footer />
       </div>

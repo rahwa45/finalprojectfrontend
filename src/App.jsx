@@ -20,7 +20,7 @@ import About from "./components/About";
 import Footer from "./components/Footer";
 import Demo from "./components/Demo";
 import "./App.css";
-import Search from "./components/Search";
+import Contact from "./components/Contact";
 import { SnackbarProvider } from "notistack";
 
 function App() {
@@ -54,7 +54,8 @@ function App() {
           <Route path="/footer" element={<Footer />} />
           <Route path="/demo" element={<Demo />} />
           <Route path="/about" element={<About />} />
-          <Route path="/search" element={<Search />} />
+
+          <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </SnackbarProvider>

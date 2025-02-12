@@ -164,7 +164,7 @@ const LandingPage = () => {
           <a href="https://www.facebook.com/profile.php?id=100093989906259&mibextid=ZbWKw">
             <FaFacebook />
           </a>
-          <a href="#">
+          <a href="https://x.com/RahwaG65944">
             <FaTwitter />
           </a>
           <a href="https://www.linkedin.com/in/rahwa-gebresilassie">
