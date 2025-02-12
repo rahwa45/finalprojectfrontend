@@ -3,8 +3,10 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import BackButton from "./BackButton";
 import Footer from "./Footer";
+import { ClipLoader } from "react-spinners";
 
 const AddPrescription = () => {
+  const [loading, setLoading] = useState(false);
   const [patientName, setPatientName] = useState("");
   const [drugDetails, setDrugDetails] = useState([
     { drugId: "", quantity: "" },
@@ -31,6 +33,7 @@ const AddPrescription = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     try {
       const response = await axios.post(
         "https://finalproject-backend-zagu.onrender.com/api/prescriptions",
@@ -42,7 +45,23 @@ const AddPrescription = () => {
     } catch (error) {
       console.error("Error adding prescription:", error);
     }
+    setLoading(false);
   };
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        {/* Show the spinner when loading */}
+        <ClipLoader size={50} color={"#3498db"} loading={loading} />
+      </div>
+    );
+  }
 
   return (
     <div className="p-5">
@@ -83,37 +102,40 @@ const AddPrescription = () => {
                 required
               />
             </div>
+            <div className="d-flex justify-content-start w-50">
+              <button
+                type="button"
+                onClick={handleAddDrug}
+                className="p-2"
+                style={{
+                  backgroundColor: "white",
+                  color: "red",
+                  border: "1px solid red",
+                }}
+              >
+                Add Drug
+              </button>
+              <button
+                type="button"
+                onClick={() => handleRemoveDrug(index)}
+                className="p-2"
+                style={{
+                  backgroundColor: "red",
+                  color: "white",
+                  border: "none",
+                }}
+              >
+                Remove Drug
+              </button>
+            </div>
           </div>
         ))}
-        <div className="d-flex justify-content-start w-50">
-          <button
-            type="button"
-            onClick={handleAddDrug}
-            className="p-2"
-            style={{
-              backgroundColor: "white",
-              color: "red",
-              border: "1px solid red",
-            }}
-          >
-            Add Drug
-          </button>
-          <button
-            type="button"
-            onClick={() => handleRemoveDrug(index)}
-            className="p-2"
-            style={{ backgroundColor: "red", color: "white", border: "none" }}
-          >
-            Remove Drug
-          </button>
-        </div>
+
         <br />
         <div>
           <label>Status:</label>
           <select value={status} onChange={(e) => setStatus(e.target.value)}>
             <option value="Pending">Pending</option>
-            <option value="Paid">Paid</option>
-            <option value="Dispensed">Dispensed</option>
           </select>
           <br /> <br />
         </div>

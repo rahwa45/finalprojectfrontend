@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import Footer from "../components/Footer";
+import { ClipLoader } from "react-spinners";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -72,9 +73,16 @@ const Login = () => {
 
   if (loading) {
     return (
-      <div className="loading-container">
-        <div className="spinner"></div>
-        <p>Loading...</p>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        {/* Show the spinner when loading */}
+        <ClipLoader size={50} color={"#3498db"} loading={loading} />
       </div>
     );
   }

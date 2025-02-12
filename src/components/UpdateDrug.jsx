@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import BackButton from "./BackButton";
 import Footer from "./Footer";
+import { ClipLoader } from "react-spinners";
 
 const UpdateDrug = () => {
   const [formData, setFormData] = useState({
@@ -75,8 +76,16 @@ const UpdateDrug = () => {
   };
   if (loading) {
     return (
-      <div className="p-4 d-flex align-items-center justify-content-center container style=height: 100vh flex-column display-4 mb-5">
-        Loading...
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        {/* Show the spinner when loading */}
+        <ClipLoader size={50} color={"#3498db"} loading={loading} />
       </div>
     );
   }

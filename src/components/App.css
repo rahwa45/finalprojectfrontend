@@ -1,8 +1,79 @@
 /* hero section*/
+
 .container1 {
   display: flex;
-  justify-content: space-between;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(pharmacy2.png);
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
 }
+
+.auth-links {
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.auth-links p {
+  margin: 5px 0;
+  color: white;
+}
+
+.auth-links a {
+  color: #21e227; /* Muted gold for an elegant touch */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.auth-links a:hover {
+  color: #e9b56e; /* Green to match buttons */
+  text-decoration: underline;
+}
+
+.cta-buttons .btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.cta-buttons .btn1 {
+  background: #0da912;
+  color: white;
+  font-weight: bold;
+}
+.cta-buttons .btn1:hover {
+  background: white;
+  color: #0da912;
+  border: 2px solid #0da912;
+  font-weight: bold;
+}
+.cta-buttons .btn2 {
+  background: #c67605;
+  color: white;
+  font-weight: bold;
+}
+
+.cta-buttons .btn2:hover {
+  background: white;
+  color: #c67605;
+  font-weight: bold;
+  border: 2px solid #f4a638;
+}
+.sign {
+  display: flex;
+  justify-content: space-between;
+  min-height: 15vh;
+}
+.sign a {
+  text-decoration: none;
+  color: black;
+}
+.sign a:hover {
+  text-decoration: underline;
+}
+
 .hero {
   margin-top: 50px;
   overflow: hidden;
@@ -26,10 +97,11 @@
 
 /* About Section */
 .about {
-  padding: 80px 0;
+  padding: 40px 0;
   margin-top: 2rem;
   background: #f4f4f4; /* Subtle background color */
   color: #333;
+  border-radius: 10px;
 }
 
 .about h2 {
@@ -48,7 +120,8 @@
 /* Features Section */
 
 .features {
-  padding: 80px 0;
+  padding: 40px 0;
+  margin-top: 2rem;
 }
 
 .features h2 {
@@ -125,8 +198,6 @@
   margin-bottom: 20px;
 }
 
-/* Auth Links in Hero Section */
-
 .demo-page {
   padding: 80px 0;
   text-align: center;
@@ -145,73 +216,13 @@
   max-width: 800px;
   border-radius: 10px;
 }
-.auth-links {
-  margin-top: 20px;
-  font-size: 16px;
-}
-
-.auth-links p {
-  margin: 5px 0;
-}
-
-.auth-links a {
-  color: #057f09; /* Muted gold for an elegant touch */
-  font-weight: bold;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.auth-links a:hover {
-  color: #e9b56e; /* Green to match buttons */
-  text-decoration: underline;
-}
-.cta-buttons .btn {
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 16px;
-  transition: all 0.3s ease;
-}
-.cta-buttons .btn1 {
-  background: #057f09;
-  color: white;
-  font-weight: bold;
-}
-.cta-buttons .btn1:hover {
-  background: white;
-  color: #057f09;
-  border: 2px solid #057f09;
-  font-weight: bold;
-}
-.cta-buttons .btn2 {
-  background: #c67605;
-  color: white;
-  font-weight: bold;
-}
-
-.cta-buttons .btn2:hover {
-  background: white;
-  color: #c67605;
-  font-weight: bold;
-  border: 2px solid #f4a638;
-}
-.sign {
-  display: flex;
-  justify-content: end;
-  gap: 8px;
-}
-.sign a {
-  text-decoration: none;
-  color: black;
-}
-.sign a:hover {
-  text-decoration: underline;
-}
 
 /* How It Works Section */
 
 .how-it-works {
-  padding: 80px 0;
+  padding: 40px 0;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .how-it-works h2 {
@@ -353,4 +364,8 @@
 }
 .foot2 {
   min-height: 50vh;
+}
+.collapse a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
 }

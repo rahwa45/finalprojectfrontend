@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import { useSnackbar } from "notistack";
-import { ClipLoader } from "react-spinners"; // Import the spinner from react-spinners
+import { ClipLoader } from "react-spinners";
 
 const VerifyEmail = () => {
   const navigate = useNavigate();

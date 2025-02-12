@@ -5,6 +5,7 @@ import axios from "axios";
 import { useSnackbar } from "notistack";
 import BackButton from "./BackButton";
 import Footer from "./Footer";
+import { ClipLoader } from "react-spinners";
 
 const AddDrugForm = () => {
   const [name, setName] = useState("");
@@ -12,11 +13,12 @@ const AddDrugForm = () => {
   const [price, setPrice] = useState("");
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
+  const [loading, setLoading] = useState(false);
 
   const handleDrug = () => {
     const token = localStorage.getItem("token");
     if (!name || quantity || price) {
-      enqueueSnackbar("Please fill in all fields including the image.", {
+      enqueueSnackbar("Please fill in all fields.", {
         variant: "error",
       });
     }
@@ -25,6 +27,7 @@ const AddDrugForm = () => {
       quantity,
       price,
     };
+    setLoading(true);
     axios
       .post("https://finalproject-backend-zagu.onrender.com/api/drugs", data, {
         headers: {
@@ -36,11 +39,29 @@ const AddDrugForm = () => {
         enqueueSnackbar("Drug created successfully", { variant: "success" });
         navigate("/drugs");
       })
+
       .catch((error) => {
         console.log("Error creating drug:", error);
         enqueueSnackbar("An error occured", { variant: "error" });
       });
+    setLoading(false);
   };
+
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        {/* Show the spinner when loading */}
+        <ClipLoader size={50} color={"#3498db"} loading={loading} />
+      </div>
+    );
+  }
 
   return (
     <div className="d-flex justify-between flex-column p-5">

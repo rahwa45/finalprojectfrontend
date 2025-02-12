@@ -4,12 +4,14 @@ import { useNavigate, Link } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import React from "react";
 import Footer from "../components/Footer";
+import { ClipLoader } from "react-spinners";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
   const [role, setRole] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -24,6 +26,7 @@ const SignUp = () => {
       enqueueSnackbar("Please fill out all fields", { variant: "error" });
       return;
     }
+    setLoading(true);
     axios
       .post("https://finalproject-backend-zagu.onrender.com/api/auth/signup", {
         username,
@@ -50,10 +53,26 @@ const SignUp = () => {
           enqueueSnackbar("Sign Up failed. Please try again later.", {
             variant: "error",
           });
+          setLoading(false);
         }
         console.error("Error details:", error.response);
       });
   };
+  if (loading) {
+    return (
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        {/* Show the spinner when loading */}
+        <ClipLoader size={50} color={"#3498db"} loading={loading} />
+      </div>
+    );
+  }
 
   return (
     <div className="form-container">

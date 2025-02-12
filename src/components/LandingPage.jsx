@@ -15,17 +15,35 @@ const LandingPage = () => {
 
       <section className="hero">
         <div className="sign">
-          <p className="link">
-            <Link to="/login">Login</Link>
-          </p>
-          <p>
-            <Link to="/signup">Sign Up</Link>
-          </p>
+          <div>
+            <img
+              src="/logo3.jpg"
+              alt=""
+              style={{
+                with: "70px",
+                height: "70px",
+                boxShadow: "0px 4px 2px green",
+              }}
+              className="rounded-circle"
+            />
+          </div>
+
+          <div className="d-flex justift-content-between gap-3">
+            {" "}
+            <p className="link">
+              <Link to="/login">Login</Link>
+            </p>
+            <p>
+              <Link to="/signup">Sign Up</Link>
+            </p>
+          </div>
         </div>
         <div className="container1">
-          <div>
-            <h1>Welcome to PharmaPMS</h1>
-            <p>Manage your pharmacy efficiently with our easy-to-use system.</p>
+          <div className="m-5">
+            <h1 className="text-white">PharmaPMS</h1>
+            <p className="text-white">
+              Manage your pharmacy efficiently with our easy-to-use system.
+            </p>
             <div className="cta-buttons">
               <Link to="/signup" className="btn btn1">
                 Get Started
@@ -43,21 +61,12 @@ const LandingPage = () => {
               </p>
             </div>
           </div>
-          <div>
-            {" "}
-            <img
-              src="/pharmacy2.png"
-              alt=""
-              style={{ width: "400px", height: "400px" }}
-              className="rounded-circle"
-            />
-          </div>
         </div>
       </section>
 
       {/* About Section */}
       <section id="about" className="about">
-        <div className="container">
+        <div className="m-5">
           <h2>About Us</h2>
           <p>
             PharmaPMS is designed to streamline your pharmacy operations, from
@@ -75,7 +84,7 @@ const LandingPage = () => {
 
       {/* Features Section */}
       <section id="features" className="features">
-        <div className="container">
+        <div className="container m-5">
           <h2>Key Features</h2>
           <div className="feature-cards">
             <div className="card1">
@@ -106,7 +115,7 @@ const LandingPage = () => {
 
       {/* How It Works Section */}
 
-      <section id="how-it-works" className="how-it-works">
+      <section id="how-it-works" className="how-it-works m-5">
         <div className="container">
           <h2 className="text-start"> How It Works</h2>
           <div className="steps">
