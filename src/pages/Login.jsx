@@ -38,6 +38,7 @@ const Login = () => {
       const { token, username: resUsername, role } = res.data;
       localStorage.setItem("token", token);
       localStorage.setItem("user", resUsername);
+      localStorage.setItem("role", role);
 
       enqueueSnackbar("Login successful!", { variant: "success" });
 

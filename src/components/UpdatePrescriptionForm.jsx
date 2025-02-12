@@ -93,7 +93,7 @@ const UpdatePrescriptionForm = () => {
             <select value={status} onChange={(e) => setStatus(e.target.value)}>
               <option value="">Select status</option>
               {selectedPrescription.status === "Pending" &&
-                userRole === "Cashier" && <option value="Paid">Paid</option>}
+                userRole === "Cashire" && <option value="Paid">Paid</option>}
               {selectedPrescription.status === "Paid" && (
                 <option value="Dispensed">Dispensed</option>
               )}
