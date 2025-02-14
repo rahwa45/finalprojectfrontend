@@ -48,13 +48,25 @@ const DrugTable = () => {
               <td className="border fs-5 text-center">{drug.price}$</td>
               <td>
                 <div className="d-flex justify-content-center gap-x-4 align-items-center addlink">
-                  <Link to={`/drugs/add`} className="mx-4">
+                  <Link
+                    to={`/drugs/add`}
+                    className="mx-4"
+                    style={{ padding: "6px", fontSize: "15px" }}
+                  >
                     AddDrug
                   </Link>
-                  <Link to={`/drugs/update/${drug._id}`} className="mx-4">
+                  <Link
+                    to={`/drugs/update/${drug._id}`}
+                    className="mx-4"
+                    style={{ padding: "6px", fontSize: "15px" }}
+                  >
                     UpdateDrug
                   </Link>
-                  <Link to={`/drugs/delete/${drug._id}`} className="mx-4">
+                  <Link
+                    to={`/drugs/delete/${drug._id}`}
+                    className="mx-4"
+                    style={{ padding: "6px", fontSize: "15px" }}
+                  >
                     Delete
                   </Link>
                 </div>

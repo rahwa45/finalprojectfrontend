@@ -21,14 +21,14 @@
 }
 
 .auth-links a {
-  color: #21e227; /* Muted gold for an elegant touch */
+  color: #21e227;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .auth-links a:hover {
-  color: #e9b56e; /* Green to match buttons */
+  color: #e9b56e;
   text-decoration: underline;
 }
 
@@ -99,7 +99,7 @@
 .about {
   padding: 40px 0;
   margin-top: 2rem;
-  background: #f4f4f4; /* Subtle background color */
+  background: #f4f4f4;
   color: #333;
   border-radius: 10px;
 }
@@ -107,7 +107,7 @@
 .about h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: black; /* Highlight the heading with a primary color */
+  color: black;
 }
 
 .about p {
@@ -163,7 +163,7 @@
 }
 .card1 .icon:hover,
 .card2 .icon:hover {
-  transform: scale(1.1); /* Slightly enlarges the icon on hover */
+  transform: scale(1.1);
 }
 .card1:hover,
 .card2:hover {
