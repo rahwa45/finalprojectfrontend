@@ -18,12 +18,15 @@ const GetDrug = () => {
 
       const token = localStorage.getItem("token"); // Get token from localStorage
 
-      const { data } = await axios.get(`http://localhost:5559/api/drugs`, {
-        params: { query: searchTerm },
-        headers: {
-          Authorization: `Bearer ${token}`, // Attach token
-        },
-      });
+      const { data } = await axios.get(
+        `https://finalproject-backend-zagu.onrender.com/api/drugs`,
+        {
+          params: { query: searchTerm },
+          headers: {
+            Authorization: `Bearer ${token}`, // Attach token
+          },
+        }
+      );
 
       setDrugs(Array.isArray(data) ? data : []);
     } catch (error) {

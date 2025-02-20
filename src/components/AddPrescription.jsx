@@ -29,10 +29,13 @@ const AddPrescription = () => {
       }
 
       try {
-        const { data } = await axios.get("http://localhost:5559/api/drugs", {
-          params: { query },
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const { data } = await axios.get(
+          "https://finalproject-backend-zagu.onrender.com/api/drugs",
+          {
+            params: { query },
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
 
         setNoResults(data.length === 0);
         setDrugs(data);

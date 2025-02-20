@@ -46,11 +46,11 @@ const AddDrugForm = () => {
   };
 
   return (
-    <div className="d-flex flex-column p-5">
+    <div className="d-flex flex-column p-5 adddrug">
       <BackButton />
       <h1 className="mb-4">Add Drugs</h1>
 
-      <div className="mb-3">
+      <div className="mb-3 w-50">
         <label>Drug Name</label>
         <input
           type="text"
@@ -60,7 +60,7 @@ const AddDrugForm = () => {
         />
       </div>
 
-      <div className="mb-3">
+      <div className="mb-3 w-50">
         <label>Quantity</label>
         <input
           type="number"
@@ -70,7 +70,7 @@ const AddDrugForm = () => {
         />
       </div>
 
-      <div className="mb-3">
+      <div className="mb-3 w-50">
         <label>Price</label>
         <input
           type="number"
@@ -80,11 +80,23 @@ const AddDrugForm = () => {
         />
       </div>
 
-      <button className="btn btn-primary btn-lg" onClick={handleAddDrug}>
+      <button
+        onClick={handleAddDrug}
+        style={{
+          backgroundColor: "#0da912",
+          color: "white",
+          border: "none",
+          padding: "10px 20px 10px",
+          marginTop: "10px",
+          borderRadius: "4px",
+          fontSize: "17px",
+          width: "8rem",
+        }}
+      >
         Save
       </button>
 
-      <div className="foot2 mt-4">
+      <div className="foot2 d-flex align-items-end">
         <Footer />
       </div>
     </div>

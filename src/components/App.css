@@ -369,3 +369,6 @@
   opacity: 0.8;
   text-decoration: underline;
 }
+.adddrug {
+  overflow-y: hidden;
+}
