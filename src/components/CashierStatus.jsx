@@ -119,7 +119,8 @@ const PrescriptionTable = () => {
                   prescription.drugDetails.map((drug, index) => (
                     <div key={index}>
                       <p>
-                        Drug: {drug.drugId.name} | Quantity: {drug.quantity}
+                        Drug: {drug.drugId?.name || "Unknown"} | Quantity:{" "}
+                        {drug.quantity}
                       </p>
                     </div>
                   ))
