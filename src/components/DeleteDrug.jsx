@@ -4,6 +4,7 @@ import { useState } from "react";
 import BackButton from "./BackButton";
 import Footer from "./Footer";
 import { ClipLoader } from "react-spinners";
+import { enqueueSnackbar } from "notistack";
 
 const DeleteDrug = () => {
   const [loading, setLoading] = useState(false);
@@ -34,6 +35,7 @@ const DeleteDrug = () => {
         },
       })
       .then(() => {
+        enqueueSnackbar("Drug deleted successfully");
         navigate("/drugs");
       })
       .catch((error) => {
@@ -68,16 +70,20 @@ const DeleteDrug = () => {
       <button
         onClick={handleDeleteDrug}
         style={{
-          padding: "10px 40px",
+          padding: "10px 30px",
           backgroundColor: "red",
           margin: "8px",
           color: "white",
           borderRadius: "4px",
+          border: "none",
         }}
       >
         Delete
       </button>
-      <button onClick={handleDeleteDrugs} style={{ padding: "8px 30px" }}>
+      <button
+        onClick={handleDeleteDrugs}
+        style={{ padding: "10px 30px", border: "none" }}
+      >
         Cancel
       </button>
       <div className="foot3 d-flex align-items-end">

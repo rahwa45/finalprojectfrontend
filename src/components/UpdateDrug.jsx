@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import BackButton from "./BackButton";
 import Footer from "./Footer";
 import { ClipLoader } from "react-spinners";
+import { useSnackbar } from "notistack";
 
 const UpdateDrug = () => {
   const [formData, setFormData] = useState({
@@ -13,12 +14,13 @@ const UpdateDrug = () => {
   });
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const { enqueueSnackbar } = useSnackbar();
   const { id } = useParams();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("No token found.");
+      enqueueSnackbar("No token found.");
       navigate("/login");
       return;
     }
@@ -37,7 +39,7 @@ const UpdateDrug = () => {
         setLoading(false);
       })
       .catch((error) => {
-        alert("An error happened. Please check the console.");
+        enqueueSnackbar("An error happened. Please check the console.");
         console.log(error);
       });
   }, [id, navigate]);
@@ -46,7 +48,7 @@ const UpdateDrug = () => {
     e.preventDefault();
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("No token found.");
+      enqueueSnackbar("No token found.");
       navigate("/drugs");
       return;
     }
@@ -66,11 +68,11 @@ const UpdateDrug = () => {
         }
       )
       .then((res) => {
-        alert("Drug updated successffully.");
+        enqueueSnackbar("Drug updated successffully.");
         navigate("/drugs");
       })
       .catch((error) => {
-        alert("An error occured. please check the console");
+        enqueueSnackbar("An error occured. please check the console");
         console.log(error);
       });
   };
@@ -132,11 +134,13 @@ const UpdateDrug = () => {
         <button
           onSubmit={handleEditDrug}
           style={{
-            backgroundColor: "purple",
+            backgroundColor: "#0da912",
             color: "white",
-            fontSize: "20px",
-            padding: "8px",
-            width: "18rem",
+            border: "none",
+            padding: "10px 20px 10px",
+            marginTop: "10px",
+            borderRadius: "4px",
+            fontSize: "17px",
           }}
         >
           Update

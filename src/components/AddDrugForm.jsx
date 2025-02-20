@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSnackbar } from "notistack";
@@ -11,23 +10,25 @@ const AddDrugForm = () => {
   const [name, setName] = useState("");
   const [quantity, setQuantity] = useState("");
   const [price, setPrice] = useState("");
+  const [drugs, setDrugs] = useState([]); // Store multiple drugs
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
-  const [loading, setLoading] = useState(false);
 
-  const handleDrug = () => {
+  const handleAddDrug = () => {
     const token = localStorage.getItem("token");
-    if (!name || quantity || price) {
-      enqueueSnackbar("Please fill in all fields.", {
+    if (!name || !quantity || !price) {
+      enqueueSnackbar("Please fill in all fielsd", {
         variant: "error",
       });
+      return;
     }
+
     const data = {
       name,
       quantity,
       price,
     };
-    setLoading(true);
     axios
       .post("https://finalproject-backend-zagu.onrender.com/api/drugs", data, {
         headers: {
@@ -39,75 +40,51 @@ const AddDrugForm = () => {
         enqueueSnackbar("Drug created successfully", { variant: "success" });
         navigate("/drugs");
       })
-
       .catch((error) => {
-        console.log("Error creating drug:", error);
-        enqueueSnackbar("An error occured", { variant: "error" });
+        console.log("Error creating drug", { variant: "error" });
       });
-    setLoading(false);
   };
 
-  if (loading) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-        }}
-      >
-        {/* Show the spinner when loading */}
-        <ClipLoader size={50} color={"#3498db"} loading={loading} />
-      </div>
-    );
-  }
-
   return (
-    <div className="d-flex justify-between flex-column p-5">
+    <div className="d-flex flex-column p-5">
       <BackButton />
-      <h1>Add Drug</h1>
-      <div>
-        <label>Drugname</label>
-        <br />
+      <h1 className="mb-4">Add Drugs</h1>
+
+      <div className="mb-3">
+        <label>Drug Name</label>
         <input
           type="text"
+          className="form-control"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
       </div>
-      <div>
-        <label>Drugquantity</label>
-        <br />
+
+      <div className="mb-3">
+        <label>Quantity</label>
         <input
           type="number"
+          className="form-control"
           value={quantity}
           onChange={(e) => setQuantity(e.target.value)}
         />
       </div>
-      <div>
-        <label>Drugprice</label>
-        <br />
+
+      <div className="mb-3">
+        <label>Price</label>
         <input
-          type="text"
+          type="number"
+          className="form-control"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
       </div>
-      <button
-        onClick={handleDrug}
-        className="btn"
-        style={{
-          backgroundColor: "purple",
-          color: "white",
-          fontSize: "20px",
-          padding: "8px",
-          width: "18rem",
-        }}
-      >
-        Add
+
+      <button className="btn btn-primary btn-lg" onClick={handleAddDrug}>
+        Save
       </button>
-      <div className="foot2 d-flex align-items-end">
+
+      <div className="foot2 mt-4">
         <Footer />
       </div>
     </div>

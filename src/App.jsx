@@ -22,6 +22,7 @@ import Demo from "./components/Demo";
 import "./App.css";
 import Contact from "./components/Contact";
 import { SnackbarProvider } from "notistack";
+import GetDrug from "./components/GetDrug";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
 
           <Route path="/drugs/add" element={<AddDrugForm />} />
           <Route path="/drugs/update/:id" element={<UpdateDrug />} />
+          <Route path="/drugs/get" element={<GetDrug />} />
 
           <Route path="/drugs/delete/:id" element={<DeleteDrug />} />
           <Route path="/prescriptions" element={<PrescriptionTable />} />
