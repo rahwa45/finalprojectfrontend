@@ -86,7 +86,7 @@ const DrugTable = () => {
                 <div>
                   <Link
                     to={`/drugs/update/${drug._id}`}
-                    className="text-primary me-3"
+                    className="text-success me-3"
                   >
                     <FaPen />
                   </Link>
@@ -108,7 +108,7 @@ const DrugTable = () => {
         <ul className="pagination">
           <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
             <button
-              className="page-link"
+              className="page-link text-black"
               onClick={() => paginate(currentPage - 1)}
             >
               Previous
@@ -121,7 +121,10 @@ const DrugTable = () => {
                 currentPage === index + 1 ? "active" : ""
               }`}
             >
-              <button className="page-link" onClick={() => paginate(index + 1)}>
+              <button
+                className="page-link text-black"
+                onClick={() => paginate(index + 1)}
+              >
                 {index + 1}
               </button>
             </li>
@@ -132,7 +135,7 @@ const DrugTable = () => {
             }`}
           >
             <button
-              className="page-link"
+              className="page-link text-black"
               onClick={() => paginate(currentPage + 1)}
             >
               Next

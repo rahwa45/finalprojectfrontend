@@ -61,11 +61,7 @@
   font-weight: bold;
   border: 2px solid #f4a638;
 }
-.sign {
-  display: flex;
-  justify-content: space-between;
-  min-height: 15vh;
-}
+
 .sign a {
   text-decoration: none;
   color: black;
@@ -99,7 +95,7 @@
 .about {
   padding: 40px 0;
   margin-top: 2rem;
-  background: #f4f4f4;
+  background: #e7e2e2;
   color: #333;
   border-radius: 10px;
 }
@@ -132,6 +128,7 @@
 
 .feature-cards {
   display: flex;
+  justify-content: space-between;
   gap: 40px;
   flex-wrap: wrap;
 }
@@ -153,7 +150,7 @@
 }
 .card1 p {
   font-size: 16px;
-  color: black;
+  color: #666;
 }
 .card1 .icon {
   font-size: 40px;
@@ -177,7 +174,7 @@
   border-radius: 8px;
   outline: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 280px;
+  width: 450px;
 }
 
 .card2 h3 {
@@ -360,7 +357,10 @@
 }
 .foot,
 .foot3 {
-  min-height: 60vh;
+  min-height: 30vh;
+}
+.foot4 {
+  min-height: 70vh;
 }
 .foot2 {
   min-height: 50vh;
@@ -371,4 +371,39 @@
 }
 .adddrug {
   overflow-y: hidden;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  gap: 8px;
+}
+
+.pagination .page-item {
+  transition: transform 0.2s ease-in-out;
+}
+
+.pagination .page-item .page-link {
+  color: #28a745;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 50px;
+  border: 1px solid #28a745;
+  transition: all 0.3s ease-in-out;
+  background-color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #28a745;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
 }

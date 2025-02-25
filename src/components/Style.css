@@ -1,0 +1,87 @@
+/* Light Mode (Default) */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Dark Mode */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+/* Button Styling in Dark Mode */
+.dark-mode .btn-outline-secondary {
+  color: white;
+  border-color: white;
+}
+
+.dark-mode .btn-outline-secondary:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Hero Section Dark Mode */
+.dark-mode .hero {
+  background-color: #121212;
+}
+.dark-mode .hero a {
+  color: white;
+  text-decoration: none;
+}
+.dark-mode .hero a:hover {
+  color: white;
+  text-decoration: underline;
+}
+.dark-mode .hero .cta-buttons .btn1:hover {
+  color: #21e227;
+  background-color: white;
+  text-decoration: none;
+}
+.dark-mode .hero .cta-buttons .btn2:hover {
+  color: #c67605;
+  background-color: white;
+  text-decoration: none;
+}
+
+/* Features Section Dark Mode */
+.dark-mode .features {
+  background-color: #121212;
+  color: white;
+}
+.dark-mode .features h2 {
+  color: white;
+}
+.dark-mode .features h3 {
+  color: black;
+}
+
+/* How It Works Section Dark Mode */
+.dark-mode .how-it-works {
+  background-color: #121212;
+  color: white;
+}
+.dark-mode .how-it-works .step {
+  outline: 0.2px solid white;
+}
+
+.dark-mode .how-it-works h2 {
+  color: white;
+}
+.dark-mode .how-it-works h3 {
+  color: white;
+}
+.dark-mode .how-it-works p {
+  color: white;
+}
+
+/* Footer Dark Mode */
+.dark-mode .footer {
+  background-color: #000;
+  color: white;
+}
+
+/* Links in Dark Mode */
+.dark-mode a {
+  color: #00aaff;
+}

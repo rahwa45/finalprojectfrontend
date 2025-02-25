@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useSnackbar } from "notistack";
 import Footer from "../components/Footer";
 import { ClipLoader } from "react-spinners";
+import BackLink from "../components/BackLink.jsx";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -90,6 +91,10 @@ const Login = () => {
 
   return (
     <div className="form-container">
+      <p className="text-start">
+        <BackLink />
+      </p>
+
       <div className="d-flex flex-column register2 align-items-center">
         <h1 className="">Login</h1>
         <div className="d-flex flex-column">

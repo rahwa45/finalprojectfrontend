@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import BackButton from "./BackButton";
+import BackLinkk from "./BackLinkk.jsx";
 import Footer from "./Footer";
 import { ClipLoader } from "react-spinners";
 import { useSnackbar } from "notistack";
@@ -124,7 +124,7 @@ const AddPrescription = () => {
 
   return (
     <div className="p-5">
-      <BackButton />
+      <BackLinkk />
 
       <h2>Add Prescription</h2>
       <form onSubmit={handleAddPrescriptionDraft} className="">

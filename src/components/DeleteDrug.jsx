@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
-import BackButton from "./BackButton";
+import BackLinkkk from "./BackLinkkk";
 import Footer from "./Footer";
 import { ClipLoader } from "react-spinners";
 import { enqueueSnackbar } from "notistack";
@@ -64,7 +64,7 @@ const DeleteDrug = () => {
   return (
     <div className="display-flex justify-content-center p-5">
       <div>
-        <BackButton />
+        <BackLinkkk />
         <h1>are you sure you want to delete this drug</h1>
       </div>
       <button
@@ -86,7 +86,7 @@ const DeleteDrug = () => {
       >
         Cancel
       </button>
-      <div className="foot3 d-flex align-items-end">
+      <div className="foot4 d-flex align-items-end">
         <Footer />
       </div>
     </div>

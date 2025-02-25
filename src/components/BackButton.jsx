@@ -6,7 +6,7 @@ const BackButton = ({ destination = "/dashboard" }) => {
     <div className="">
       <Link
         to={destination}
-        className="text-black  fs-5 backbutton text-center"
+        className="text-secondary  fs-5 backbutton text-center"
       >
         <GoArrowLeft />
       </Link>

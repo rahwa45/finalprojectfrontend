@@ -5,6 +5,7 @@ import { useSnackbar } from "notistack";
 import React from "react";
 import Footer from "../components/Footer";
 import { ClipLoader } from "react-spinners";
+import BackLink from "../components/BackLink.jsx";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -76,6 +77,9 @@ const SignUp = () => {
 
   return (
     <div className="form-container">
+      <p>
+        <BackLink />
+      </p>
       <div className="d-flex flex-column register">
         <h1>Sign Up</h1>
         <div className="">

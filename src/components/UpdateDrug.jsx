@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
-import BackButton from "./BackButton";
+import BackLinkkk from "./BackLinkkk";
 import Footer from "./Footer";
 import { ClipLoader } from "react-spinners";
 import { useSnackbar } from "notistack";
@@ -93,7 +93,7 @@ const UpdateDrug = () => {
   }
   return (
     <div className="d-flex justify-content-center flex-column p-5">
-      <BackButton />
+      <BackLinkkk />
       <h1>Update Drug</h1>
 
       <form onSubmit={handleEditDrug} className="">

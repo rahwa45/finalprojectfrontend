@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { GoArrowLeft } from "react-icons/go";
 
-const BackLink = ({ destination = "/" }) => {
+const BackLinkkk = ({ destination = "/drugs" }) => {
   return (
     <div className="">
       <Link
@@ -15,4 +15,4 @@ const BackLink = ({ destination = "/" }) => {
   );
 };
 
-export default BackLink;
+export default BackLinkkk;

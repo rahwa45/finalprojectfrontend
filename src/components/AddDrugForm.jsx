@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useSnackbar } from "notistack";
-import BackButton from "./BackButton";
+import BackLinkkk from "./BackLinkkk";
 import Footer from "./Footer";
 import { ClipLoader } from "react-spinners";
 
@@ -18,7 +18,7 @@ const AddDrugForm = () => {
   const handleAddDrug = () => {
     const token = localStorage.getItem("token");
     if (!name || !quantity || !price) {
-      enqueueSnackbar("Please fill in all fielsd", {
+      enqueueSnackbar("Please fill in all fields", {
         variant: "error",
       });
       return;
@@ -47,7 +47,7 @@ const AddDrugForm = () => {
 
   return (
     <div className="d-flex flex-column p-5 adddrug">
-      <BackButton />
+      <BackLinkkk />
       <h1 className="mb-4">Add Drugs</h1>
 
       <div className="mb-3 w-50">
