@@ -10,7 +10,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.min.css"; // Import Bootstrap
-import "./style.css"; // Import custom CSS
+import "./Style.css"; // Import custom CSS
 
 const LandingPage = () => {
   // Dark Mode State
